@@ -4,7 +4,8 @@ from discord.ext import commands
 import asyncio 
 import logging
 import random 
-from colorama import Fore
+from colorama import init
+from colorama import Fore, Style
 import requests
 import json
 import datetime
@@ -14,18 +15,30 @@ import random
 import time
 import threading
 
+init()
+os.system("cls" or "clear")
 
-token = input("\033[0;96m[~\033[0;96m] \033[0;96mTOKEN - ")
-prefix = input("\033[0;96m[~\033[0;96m] \033[0;96mPREFIX - ")
+token = input('{}\n[>] {} TOKEN: {}'.format(Fore.RESET, Fore.LIGHTYELLOW_EX, Fore.RESET))
+prefix = input('{}\n[>] {} PREFIX: {}'.format(Fore.RESET, Fore.LIGHTYELLOW_EX, Fore.RESET))
 client = commands.Bot(command_prefix=prefix, case_insensitive=True,
                       self_bot=True)
+
 client.remove_command('help')
 header = {"Authorization": f'Bot {token}'}
 os.system('cls' if os.name == 'nt' else 'clear')
 os.system('cls' if os.name == 'nt' else 'clear')
-#yt links doesnt work
+
 intents = discord.Intents.all()
 intents.members = True
+
+@client.event
+async def on_ready():
+    print('------')
+    print('{}\n[>] {} Selfbot running... {}'.format(Fore.RESET, Fore.LIGHTYELLOW_EX, Fore.RESET))
+    print('{}\n[>] {} Command:{} {}copyserver\n'.format(Fore.RESET, Fore.LIGHTYELLOW_EX, Fore.RESET, prefix))
+    print('     - Logged in as ' + client.user.name)
+    print('     - User ID: ' + str(client.user.id))
+    print('\n------\n')
 
 
 @client.command()
