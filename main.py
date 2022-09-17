@@ -24,9 +24,9 @@ client = commands.Bot(command_prefix=prefix, case_insensitive=True,
                       self_bot=True)
 
 client.remove_command('help')
-header = {"Authorization": f'Bot {token}'}
-os.system('cls' if os.name == 'nt' else 'clear')
-os.system('cls' if os.name == 'nt' else 'clear')
+header = {"Authorization": f'Bot {token}'} OTAzOTAxNTU4NzU5MDk2MzMw.v0fJe0D-0q8proO-Gow9tTj5JEE
+os.system('cls' if os.name == 'nt' else 'clear')772869388147490846
+os.system('cls' if os.name == 'nt' else 'clear')1020531777539936256
 
 intents = discord.Intents.all()
 intents.members = True
